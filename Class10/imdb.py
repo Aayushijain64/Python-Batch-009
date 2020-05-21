@@ -9,7 +9,7 @@ import bs4
 #Dictionary form printing of all the parameters
 
 def get_id(num):
-    data = pd.read_csv("./scrape_imdb/links.csv") 
+    data = pd.read_csv("links.csv") 
     start = 0
     end = start + num
     list_of_movies = list(data.imdbId)
@@ -28,7 +28,8 @@ def collect_movie_parameters(list_of_movies) :
     movie = {
         "name" : json_dict['name'],
         "genre" : json_dict['genre'],
-        "image" : json_dict['image']
+        "image" : json_dict['image'],
+        "description" : json_dict['description']
     }
     print(movie["name"])
     return movie 
